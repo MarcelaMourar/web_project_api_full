@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
-const cors= require ('cors');
+const cors = require ('cors');
 const { errors: celebrateErrors } = require('celebrate');
 const auth = require('./middleware/auth');
 const { requestLogger, errorLogger} = require ('./middleware/logger');
@@ -19,17 +19,8 @@ mongoose.connect(MONGO_URL);
 
 
 app.use(cors());
-app.options('*', cors());
-
 app.use(express.json());
-
 app.use(requestLogger);
-
-app.get('/crash-test',() => {
-    setTimeout(() => {
-        throw new Error ('Servidor vai cair');
-    }, 0);
-});
 
 app.post('/signup', validateSignup, createUser);
 app.post('/signin',validateSignin, login);
@@ -40,10 +31,9 @@ app.use('/users',usersRouter);
 app.use('/cards', cardsRouter);
 
 app.use(errorLogger);
-
 app.use(celebrateErrors());
-
 app.use(errorHandler);
+
 
 app.listen (3000, () => {
     console.log('Servidor iniciado na porta 3000');
