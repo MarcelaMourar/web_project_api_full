@@ -1,5 +1,7 @@
 const mongoose = require ('mongoose');
 const Card = require ('../models/card');
+const ForbiddenError = require ('../errors/ForbiddenError');
+const NotFoundError = require ('../errors/NotFoundError');
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
@@ -47,12 +49,21 @@ module.exports.disLikeCard = (req, res, next) => {
 
 
 
-Card.findById(cardId)
-  .then((card) => {
-    if (!card) return res.status(404).send({ message: 'Card não encontrado' });
-    if (card.owner.toString() !== req.user._id) {
-      return res.status(403).send({ message: 'Não permitido' });
-    }
-    return card.deleteOne().then(() => res.send({ message: 'Card deletado' }));
-  })
-  .catch(next);
+module.exports.deleteCard = (req, res, next) => {
+  const { cardId } = req.params;
+  const userId = req.user._id;
+
+  Card.findById(cardId)
+    .orFail(() => {
+      throw new NotFoundError('Card não encontrado');
+    })
+    .then((card) => {
+     if (card.owner.toString() !== userId) {
+        throw new ForbiddenError('Você não tem permissão para deletar este card');
+      }
+
+      return card.deleteOne();
+    })
+    .then(() => res.send({ message: 'Card deletado com sucesso' }))
+    .catch(next);
+};
