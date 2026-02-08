@@ -35,6 +35,6 @@ app.use(celebrateErrors());
 app.use(errorHandler);
 
 
-app.listen (3000, () => {
-    console.log('Servidor iniciado na porta 3000');
+app.listen(PORT, () => {
+    console.log(`Servidor iniciado na porta ${PORT}`);
 });
