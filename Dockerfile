@@ -1,18 +1,19 @@
 FROM node:18-slim
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Copia os arquivos de configuração
+# Copia os arquivos de dependências da raiz
 COPY package*.json ./
 
-# Instala apenas dependências de produção (ignora nodemon)
+# Instala as dependências
 RUN npm install --only=production
 
-# Copia o restante do código
+# Copia TODOS os arquivos e pastas (incluindo a pasta backend)
 COPY . .
 
-# Garante que o container use a variável de ambiente PORT do Google
-ENV PORT 8080
+# Garante que o Node ignore erros de avisos e use a porta correta
+ENV NODE_ENV=production
+ENV PORT=8080
 
-# Comando para iniciar
-CMD [ "node", "app.js" ]
+# Comando para iniciar o app que está na raiz
+CMD ["node", "app.js"]

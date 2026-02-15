@@ -36,4 +36,3 @@ app.listen(PORT, "0.0.0.0", () => {
     console.log(`Servidor iniciado na porta ${PORT}`);
 });
 
-// Forçando deploy com IP liberado no Atlas
