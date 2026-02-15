@@ -1,18 +1,18 @@
-# Use uma imagem oficial do Node
 FROM node:18-slim
 
-# Cria o diretório da app
-WORKDIR /app
+WORKDIR /usr/src/app
 
-# Copia os arquivos de dependências
+# Copia os arquivos de configuração
 COPY package*.json ./
 
-# Instala as dependências de produção
+# Instala apenas dependências de produção (ignora nodemon)
 RUN npm install --only=production
 
-# Copia o resto do código
+# Copia o restante do código
 COPY . .
 
-# O Cloud Run passará a porta via variável de ambiente, 
-# então apenas garantimos que o comando de inicialização rode o script start
-CMD ["npm", "start"]
+# Garante que o container use a variável de ambiente PORT do Google
+ENV PORT 8080
+
+# Comando para iniciar
+CMD [ "node", "app.js" ]
