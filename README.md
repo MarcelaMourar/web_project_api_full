@@ -1,115 +1,113 @@
 # 🌎 Around The U.S. - Full Stack
 
-## 📌 Descrição
+## 📌 Description
 
-**Around The U.S. - Full Stack** é o projeto final desenvolvido durante o programa de Desenvolvimento Web da TripleTen.
+**Around The U.S. - Full Stack** is the final project of the Web Development Program at TripleTen. 
 
-Trata-se de uma aplicação **Full Stack** que integra um **front-end desenvolvido em React** com um **back-end construído em Node.js e Express**, utilizando **MongoDB** como banco de dados.
+It is a **Full Stack** web application. It connects a **React front-end** with a **Node.js and Express back-end**, using **MongoDB** for the database.
 
-A aplicação funciona como uma rede social interativa, permitindo que os usuários criem contas, façam login, compartilhem fotos de lugares, curtam publicações e gerenciem seus próprios perfis.
+The application works like a simple social network. Users can create accounts, log in, share photos of places, like posts, and edit their profiles.
 
-Além do desenvolvimento da aplicação, o projeto inclui a implementação de práticas modernas de segurança, autenticação, deploy em nuvem e configuração de infraestrutura para disponibilizar a aplicação em produção.
-
----
-
-## ✨ Funcionalidades
-
-* 🔐 Cadastro e login de usuários;
-* 🛡️ Autenticação segura utilizando JSON Web Token (JWT);
-* 👤 Edição do perfil do usuário;
-* 🖼️ Adição e exclusão de cartões (fotos);
-* ❤️ Curtir e remover curtidas das publicações;
-* 🖋️ Atualização do avatar;
-* 🔒 Proteção de rotas privadas;
-* ⚠️ Tratamento centralizado de erros;
-* 📱 Interface responsiva para diferentes dispositivos.
+The project also includes modern practices for security, user authentication, cloud deploy, and infrastructure setup to put the application online.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## ✨ Features
+
+* 🔐 User sign-up and login;
+* 🛡️ Secure authentication with JSON Web Token (JWT);
+* 👤 User profile editing;
+* 🖼️ Add and delete cards (photos);
+* ❤️ Like and unlike posts;
+* 🖋️ Update user avatar;
+* 🔒 Protected private routes;
+* ⚠️ Centralized error handling;
+* 📱 Responsive design for different devices.
+
+---
+
+## 🛠️ Technologies Used
 
 ### Front-end
 
-* **React.js** → Construção da interface da aplicação;
-* **React Router** → Gerenciamento das rotas;
-* **Context API** → Gerenciamento do estado global do usuário;
-* **Validator** → Validação de entradas do usuário;
-* **JavaScript (ES6+)** → Lógica da aplicação;
-* **CSS3** → Estilização e responsividade.
+* **React.js** → Building the user interface;
+* **React Router** → Route management;
+* **Context API** → Global user state management;
+* **Validator** → Input validation;
+* **JavaScript (ES6+)** → Application logic;
+* **CSS3** → Styling and responsiveness.
 
 ### Back-end
 
-* **Node.js** → Ambiente de execução JavaScript;
-* **Express.js** → Desenvolvimento da API REST;
-* **MongoDB** → Banco de dados NoSQL;
-* **Mongoose** → Modelagem dos dados;
-* **JSON Web Token (JWT)** → Autenticação segura;
-* **Bcryptjs** → Criptografia de senhas;
-* **Celebrate & Joi** → Validação das requisições;
-* **Winston** → Sistema de logs.
+* **Node.js** → JavaScript runtime environment;
+* **Express.js** → REST API development;
+* **MongoDB** → NoSQL database;
+* **Mongoose** → Data modeling;
+* **JSON Web Token (JWT)** → Secure authentication;
+* **Bcryptjs** → Password encryption;
+* **Celebrate & Joi** → Request validation;
+* **Winston** → Logger system.
 
-### Infraestrutura e DevOps
+### Infrastructure & DevOps
 
-* **Nginx** → Servidor web e proxy reverso;
-* **PM2** → Gerenciamento dos processos da aplicação;
-* **Certbot / Let's Encrypt** → Certificados SSL (HTTPS);
-* **Google Cloud** → Hospedagem da aplicação.
+* **Nginx** → Web server and reverse proxy;
+* **PM2** → Process management;
+* **Certbot / Let's Encrypt** → SSL Certificates (HTTPS);
+* **Google Cloud** → Application hosting.
 
 ---
 
-## 🚀 Como executar o projeto localmente
+## 🚀 How to run the project locally
 
-### 1. Clone o repositório
+### 1. Clone the repository
 
-```bash id="r36m3r"
+```bash
 git clone https://github.com/MarcelaMourar/web_project_api_full.git
 ```
 
-### 2. Acesse a pasta do projeto
+### 2. Go to the project folder
 
-```bash id="4rlm4g"
+```bash
 cd web_project_api_full
 ```
 
-### 3. Instale as dependências
+### 3. Install dependencies
 
-Caso o projeto possua pastas separadas para front-end e back-end, instale as dependências em cada uma delas.
+If the project has separate folders for front-end and back-end, install the dependencies in each folder.
 
-```bash id="m6m85x"
+```bash
 npm install
 ```
 
-### 4. Configure as variáveis de ambiente
+### 4. Configure environment variables
 
-Crie um arquivo `.env` com as configurações necessárias.
+Create a `.env` file with the required settings.
 
-Exemplo:
+Example:
 
-```env id="bxhtrg"
+```env
 PORT=3000
-
-JWT_SECRET=sua_chave_secreta
-
-MONGO_URI=sua_string_de_conexao
+JWT_SECRET=your_secret_key
+MONGO_URI=your_connection_string
 ```
 
-### 5. Execute a aplicação
+### 5. Run the application
 
-Inicie o servidor:
+Start the server:
 
-```bash id="gk45z5"
+```bash
 npm run dev
 ```
 
-Ou:
+Or:
 
-```bash id="u6qlxh"
+```bash
 npm start
 ```
 
-A aplicação estará disponível em:
+The application will be available at:
 
-```text id="g51ghu"
+```text
 http://localhost:3000
 ```
 
@@ -117,44 +115,42 @@ http://localhost:3000
 
 ## 🌐 Links
 
-### API em produção
-
+### Production API
 https://web-project-api-full-w621.onrender.com/
 
-### Repositório GitHub
-
+### GitHub Repository
 https://github.com/MarcelaMourar/web_project_api_full
 
 ---
 
-## 🔒 Segurança Implementada
+## 🔒 Security Implemented
 
-Este projeto utiliza práticas modernas de segurança, incluindo:
+This project includes modern web security features:
 
-* Criptografia de senhas com **Bcryptjs**;
-* Autenticação baseada em **JWT**;
-* Proteção de rotas privadas;
-* Validação de dados com **Celebrate** e **Joi**;
-* Tratamento centralizado de erros;
-* Registro de logs da aplicação.
-
----
-
-## 🎯 Objetivo do Projeto
-
-Este projeto foi desenvolvido para consolidar conhecimentos em desenvolvimento Full Stack, aplicando conceitos como:
-
-* Desenvolvimento de APIs REST;
-* Integração entre front-end e back-end;
-* Gerenciamento de banco de dados;
-* Autenticação e autorização de usuários;
-* Segurança de aplicações web;
-* Deploy em ambientes de produção;
-* Configuração de servidores e infraestrutura;
-* Boas práticas de desenvolvimento.
+* Password encryption using **Bcryptjs**;
+* Authentication with **JWT**;
+* Protected private routes;
+* Data validation with **Celebrate** and **Joi**;
+* Centralized error handling;
+* Application logs.
 
 ---
 
-## 👩‍💻 Autor
+## 🎯 Project Objective
 
-Projeto desenvolvido por **Marcela Moura** como parte do programa de **Desenvolvimento Web da TripleTen**.
+This project was built to practice Full Stack development skills, applying concepts like:
+
+* Building REST APIs;
+* Connecting front-end and back-end;
+* Database management;
+* User authentication and authorization;
+* Web application security;
+* Deploying to production environments;
+* Server and infrastructure configuration;
+* Coding best practices.
+
+---
+
+## 👩‍💻 Author
+
+Project developed by **Marcela Moura** as part of the **TripleTen Web Development Program**.
