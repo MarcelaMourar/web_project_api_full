@@ -48,13 +48,6 @@ The project also includes modern practices for security, user authentication, cl
 * **Celebrate & Joi** → Request validation;
 * **Winston** → Logger system.
 
-### Infrastructure & DevOps
-
-* **Nginx** → Web server and reverse proxy;
-* **PM2** → Process management;
-* **Certbot / Let's Encrypt** → SSL Certificates (HTTPS);
-* **Google Cloud** → Application hosting.
-
 ---
 
 ## 🚀 How to run the project locally
