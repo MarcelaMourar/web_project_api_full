@@ -55,13 +55,13 @@ The project also includes modern practices for security, user authentication, cl
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/MarcelaMourar/web_project_api_full.git
+git clone https://github.com/MarcelaMourar/around-us-fullstack.git
 ```
 
 ### 2. Go to the project folder
 
 ```bash
-cd web_project_api_full
+cd around-us-fullstack
 ```
 
 ### 3. Install dependencies
@@ -112,7 +112,7 @@ http://localhost:3000
 https://web-project-api-full-w621.onrender.com/
 
 ### GitHub Repository
-https://github.com/MarcelaMourar/web_project_api_full
+https://github.com/MarcelaMourar/around-us-fullstack.git
 
 ---
 
